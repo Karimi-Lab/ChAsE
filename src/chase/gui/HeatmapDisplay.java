@@ -3,9 +3,6 @@ package chase.gui;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import org.apache.commons.lang3.ArrayUtils;
-
 import processing.core.*;
 import processing.pdf.*;
 import still.gui.MouseState;

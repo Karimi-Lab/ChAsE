@@ -47,7 +47,7 @@ public class DSArgs {
 				
 				if( arg.charAt(1) == 'V' ) {
 					
-					System.out.println("DimStiller Version " + DimStiller.VERSION_STRING );
+					//System.out.println("DimStiller Version " + DimStiller.VERSION_STRING );
 					System.exit(0);
 				}
 
