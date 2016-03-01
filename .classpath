@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/|.svn/|chase/.DS_Store|chase/.svn/|chase/gui/.svn/|chase/input/.svn/|chase/input/xml/.svn/|collab/SparkPreProcessor.java|dataLoader/DataModel.java|dataLoader/IndexedDataTable.java|heidi/action/|heidi/application/|heidi/data/|heidi/data/query/|heidi/dimreduction/|heidi/frequency/|heidi/plot/|heidi/project/|heidi/visual/|heidi/visual/expression/|still/analysis/|still/data/BioReader.java|still/data/LazyDims.java|still/data/LazyGroup.java|still/gui/HistView.java|still/gui/PCorrAPainter.java|still/gui/PHistPainter.java|still/gui/PMatrixPainter.java|still/gui/PSplomPainter.java|still/gui/ScatterView.java|still/gui/SplomView.java|still/operators/CAOp.java|still/operators/CutoffOp.java|still/operators/FilterOp.java|still/operators/GlimmerFunction.java|still/operators/GlimmerOp.java|still/operators/HistogramOp.java|still/operators/IdentityOp.java|still/operators/KMeansOp.java|still/operators/NormalizeOp.java|still/operators/OperatorFactory.java|still/operators/PCAOp.java|still/operators/PearsonCollectOp.java" kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/core.jar"/>
+	<classpathentry kind="lib" path="lib/JRI.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="dimstiller/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/JRIEngine.jar"/>
+	<classpathentry kind="lib" path="lib/REngine.jar"/>
+	<classpathentry kind="lib" path="lib/jedit.jar"/>
+	<classpathentry kind="lib" path="lib/RserveEngine.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/pdf.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-all-1.9.8.jar"/>
+	<classpathentry kind="lib" path="lib/org.broad.igv.bbfile.jar"/>
+	<classpathentry kind="lib" path="lib/tribble-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/tuple.jar"/>
+	<classpathentry kind="lib" path="lib/itext.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
