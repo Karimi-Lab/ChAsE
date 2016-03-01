@@ -29,20 +29,13 @@ public class UpdateManager {
         "java.specification.vendor",//    JRE specification vendor
         "java.specification.name",//     JREspecification name
         "java.class.version",//  Java class format version number
-        //"java.class.path",//  Path of java class
         "java.library.path",//   List of paths to search when loading libraries
         "java.io.tmpdir",//  The path of temp file
         "java.compiler",//   The Name of JIT compiler to use
         "java.ext.dirs",//   The path of extension directory or directories
         "os.name",//     The name of OS name
         "os.arch",//     The OS architecture
-        "os.version",//  The version of OS
-        //"file.separator",//  The File separator
-        //"path.separator",//  The path separator 
-        //"line.separator",//  The line separator
-        //"user.name",//   The name of account name user
-        //"user.home",//   The home directory of user 
-        "user.dir" //The current working directory of the user
+        "os.version"//  The version of OS
     };
     
     public static void main(String[] args) {
@@ -54,11 +47,11 @@ public class UpdateManager {
     }
 
     public static String getIDStr() {
-        return "univie";
+        return "github";
     }
 
     public static String getToolName() {
-        return "ChAsE (v 1.0.11)";
+        return "ChAsE (v 1.0.12)";
     }
 
     public static void checkForUpdates()
@@ -88,7 +81,6 @@ public class UpdateManager {
             allProperties += "Usable space: " + (root.getUsableSpace() / MB) + "<br>\n";
         }
         
-        allProperties += "&mca=" + getMacAddress();
         //System.out.println(allProperties);
         try {
             System.out.println("Checking for updates");
@@ -164,41 +156,7 @@ public class UpdateManager {
             //System.exit(0);
         }
     }
-    
-    private static String getMacAddress() {
-        String addr = ""; 
-        try {
-            Enumeration<NetworkInterface> nwInterface = NetworkInterface.getNetworkInterfaces();
-            while (nwInterface.hasMoreElements()) {
-                NetworkInterface nis = nwInterface.nextElement();
-                if (nis != null) {
-                    byte[] mac = nis.getHardwareAddress();
-                    if (mac != null) {
-                        /*
-                         * Extract each array of mac address and generate a
-                         * hashCode for it
-                         */
-                        
-                        StringBuilder sb = new StringBuilder(18);
-                        for (byte b : mac) {
-                            if (sb.length() > 0)
-                                sb.append(':');
-                            sb.append(String.format("%02x", b));
-                        }
-                        addr += sb  ;//.hashCode();
-                    } else {
-                        addr += "Address doesn't exist or is not accessible";
-                    }
-                } else {
-                    addr += " Network Interface for the specified address is not found.";
-                }
-            }
-        } catch (Exception ex) {
-            addr += ex.getMessage();
-        }
-        return addr;
-    }    
-    
+
     private static String sendPost(String message) throws Exception 
     {
         String url = "http://genecalc.t15.org/chase_update.php";
