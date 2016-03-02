@@ -1,10 +1,11 @@
 package chase.gui;
 
+import org.sfu.chase.ClustFramework.SortCriteria;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
-import chase.Utils;
-import chase.ClustFramework.SortCriteria;
+import util.Utils;
 
 public class DisplayParams
 {

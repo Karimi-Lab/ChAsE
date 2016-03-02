@@ -3,12 +3,13 @@ package chase.gui;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.sfu.chase.ClustFramework;
+import org.sfu.chase.ClustInfo;
+
 import processing.core.PApplet;
 import processing.core.PConstants;
 import still.gui.MouseState;
-import chase.ClustFramework;
-import chase.ClustInfo;
-import chase.Utils;
+import util.Utils;
 import controlP5.ControlEvent;
 import controlP5.ControlListener;
 import controlP5.ControlP5;

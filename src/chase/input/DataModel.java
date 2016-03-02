@@ -29,8 +29,7 @@ import java.util.Arrays;
 import javax.swing.SwingWorker;
 
 import org.apache.log4j.Logger;
-
-import chase.Experiment;
+import org.sfu.chase.Experiment;
 
 import collab.BioReader;
 import collab.Feature;

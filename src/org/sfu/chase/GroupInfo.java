@@ -1,4 +1,4 @@
-package chase;
+package org.sfu.chase;
 
 public class GroupInfo
 {

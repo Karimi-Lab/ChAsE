@@ -7,12 +7,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.event.ChangeEvent;
 
+import org.sfu.chase.ClustInfo;
+
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 import still.gui.MouseState;
-import chase.ClustInfo;
-import chase.Utils;
+import util.Utils;
 import controlP5.Button;
 import controlP5.ControlEvent;
 import controlP5.ControlP5;

@@ -5,13 +5,15 @@ import java.awt.geom.Line2D;
 import java.text.NumberFormat;
 
 import javax.swing.event.ChangeEvent;
+
+import org.sfu.chase.ClustInfo;
+import org.sfu.chase.GroupInfo;
+
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
-import chase.ClustInfo;
-import chase.GroupInfo;
-import chase.Utils;
-import chase.Utils.Rect;
+import util.Utils;
+import util.Utils.Rect;
 import chase.gui.DisplayParams.PlotType;
 import chase.input.Parameters;
 import collab.DataStats;

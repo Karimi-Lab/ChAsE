@@ -3,10 +3,13 @@ package chase.gui;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.sfu.chase.*;
+
 import processing.core.*;
 import processing.pdf.*;
 import still.gui.MouseState;
-import chase.*;
+import util.Utils;
 
 public class HeatmapDisplay
 {

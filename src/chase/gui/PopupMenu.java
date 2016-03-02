@@ -15,7 +15,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
-import chase.ClustFramework.SortCriteria;
+import org.sfu.chase.ClustFramework.SortCriteria;
 
 public class PopupMenu 
 {

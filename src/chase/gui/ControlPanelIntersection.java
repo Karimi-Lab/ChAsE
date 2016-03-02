@@ -4,12 +4,13 @@ import java.util.Arrays;
 
 import javax.swing.event.ChangeEvent;
 
+import org.sfu.chase.ClustInfo;
+import org.sfu.chase.ClustCombine.CombineOp;
+
 import processing.core.PApplet;
 import processing.core.PConstants;
-import chase.ClustInfo;
-import chase.Utils;
-import chase.ClustCombine.CombineOp;
-import chase.Utils.Rect;
+import util.Utils;
+import util.Utils.Rect;
 import controlP5.Button;
 import controlP5.ControlEvent;
 import controlP5.ControlP5;

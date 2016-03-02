@@ -1,4 +1,4 @@
-package chase;
+package org.sfu.chase;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

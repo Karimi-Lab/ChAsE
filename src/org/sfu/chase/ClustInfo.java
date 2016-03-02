@@ -1,4 +1,4 @@
-package chase;
+package org.sfu.chase;
 
 import java.util.ArrayList;
 import java.util.Arrays;

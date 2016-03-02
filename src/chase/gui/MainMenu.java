@@ -21,9 +21,9 @@ import javax.swing.KeyStroke;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-import chase.ChaseOp;
-import chase.ClustInfo;
-import chase.ClustFramework.SortCriteria;
+import org.sfu.chase.ChaseOp;
+import org.sfu.chase.ClustInfo;
+import org.sfu.chase.ClustFramework.SortCriteria;
 
 public class MainMenu {
 

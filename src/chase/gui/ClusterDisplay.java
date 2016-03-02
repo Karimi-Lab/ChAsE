@@ -2,10 +2,12 @@ package chase.gui;
 
 import java.util.ArrayList;
 
+import org.sfu.chase.*;
+
 import processing.core.*;
 import still.gui.MouseState;
-import chase.*;
-import chase.Utils.Rect;
+import util.Utils;
+import util.Utils.Rect;
 import chase.gui.DrawUtils;
 
 public class ClusterDisplay

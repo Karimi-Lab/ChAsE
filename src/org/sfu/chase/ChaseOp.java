@@ -1,7 +1,9 @@
-package chase;
+package org.sfu.chase;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
+
+import org.sfu.chase.ClustFramework;
 
 import still.data.MemoryTable;
 import still.data.Operator;
@@ -11,7 +13,7 @@ import chase.gui.PChasePainter;
 import chase.input.DataModel;
 import chase.input.InputDialog;
 import still.operators.BasicOp;
-import chase.ClustFramework;
+import util.UpdateManager;
 
 public class ChaseOp extends BasicOp
 {
@@ -171,33 +173,33 @@ public class ChaseOp extends BasicOp
 	
 	public static void main( final String[] args )
 	{
+	    /*
+	    // not working after Java 1.6: https://developer.apple.com/library/mac/documentation/Java/Conceptual/Java14Development/07-NativePlatformIntegration/NativePlatformIntegration.html
+        // http://stackoverflow.com/questions/3154638/setting-java-swing-application-name-on-mac
+	    try {
+	        // take the menu bar off the jframe
+	        System.setProperty("apple.laf.useScreenMenuBar", "true");
+
+	        // set the name of the application menu item
+	        System.setProperty("com.apple.mrj.application.apple.menu.about.name", "ChAsE");
+
+	        // set the look and feel
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        */	    
+	    
         UpdateManager.checkForUpdates();
 		m_InputDialog = new InputDialog();
-		if (args.length >= 3)
+		if (m_InputDialog.showModal() != 0)
 		{
-	        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-	            public void run()
-	            {
-	            	String csvName = args[0];
-	            	m_gffFilePath = args[1];
-	            	m_NumGroups = Integer.parseInt(args[2]);
-	            	Table table = TableFactory.loadTableCSV(csvName);
-	            	@SuppressWarnings("unused")
-					ChaseOp op = new ChaseOp(table, true);
-	            }
-	        } );
+			@SuppressWarnings("unused")
+			ChaseOp op = new ChaseOp(m_InputDialog.getDataModel());
 		}
 		else
 		{
-			if (m_InputDialog.showModal() != 0)
-			{
-				@SuppressWarnings("unused")
-				ChaseOp op = new ChaseOp(m_InputDialog.getDataModel());
-			}
-			else
-			{
-				System.exit(0);
-			}
+			System.exit(0);
 		}
 	}
 }

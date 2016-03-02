@@ -1,4 +1,4 @@
-package chase;
+package org.sfu.chase;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,12 +20,12 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 
 import chase.input.DataModel;
-
 import collab.BioReader;
 import collab.Feature;
 import still.data.MemoryTable;
 import still.data.Table;
 import still.data.TableFactory;
+import util.Utils;
 
 public class ClustFramework
 {

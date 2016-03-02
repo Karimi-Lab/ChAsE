@@ -8,9 +8,10 @@ import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.apache.commons.io.FileUtils;
+import org.sfu.chase.Experiment;
 
-import chase.Experiment;
-import chase.UpdateManager;
+import util.FileDialogUtils;
+import util.UpdateManager;
 import chase.gui.ColorPalette;
 
 import java.awt.event.ActionEvent;
@@ -22,6 +23,8 @@ import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Dimension;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -378,7 +381,7 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
      */
     void addExperiment()
     {
-		JFileChooser fc = new JFileChooser();
+		/*JFileChooser fc = new JFileChooser();
 		if (!m_LastAddedExperiment.equals("")) {
 			fc.setCurrentDirectory(new java.io.File(m_LastAddedExperiment).getParentFile());
 		}
@@ -386,10 +389,22 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
 	    fc.setDialogTitle("Open Epigenetic Mark(s)");
 		fc.setFileFilter(new FileNameExtensionFilter("Wig/BigWig (.wig|.wig.gz|.wig.zip|.bigwig|.bw)", "wig","gz","zip","bigwig","bw"));
 		fc.setMultiSelectionEnabled(true);
-		if( fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION )
-		{
-			File[] files = fc.getSelectedFiles();
-			for (int i = 0; i < files.length; i++)
+        if( fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION )
+        {
+            File[] files = fc.getSelectedFiles();
+            for (int i = 0; i < files.length; i++)
+        */
+		
+		
+	    final String[] extensions = {"wig","gz","zip","bigwig","bw"};
+        FilenameFilter filter = FileDialogUtils.createIgnoreDirectoriesFilenameFilter(extensions);
+        File initialDirectory = null;
+        if (!m_LastAddedExperiment.equals("")) {
+            initialDirectory = new java.io.File(m_LastAddedExperiment).getParentFile();
+        }
+        File[] files = FileDialogUtils.chooseMultiple("Open input file", initialDirectory, filter);
+        if(files != null) {
+            for (int i = 0; i < files.length; i++)
 			{
 				m_DataModel.getExperiments().add(new Experiment(true, files[i].getName(), files[i].getAbsolutePath(), 1, 1, 0, false, "blue"));
 				if (i == 0) {

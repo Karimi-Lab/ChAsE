@@ -14,15 +14,16 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import org.sfu.chase.*;
+import org.sfu.chase.ClustFramework.SortCriteria;
+
 import controlP5.*;
 import controlP5.PanelController.TransformListener;
 import processing.core.*;
-
 import still.data.Operator;
 import still.gui.MouseState;
 import still.gui.PBasicPainter;
-import chase.*;
-import chase.ClustFramework.SortCriteria;
+import util.Utils;
 
 public class PChasePainter extends PBasicPainter implements ControlListener, TransformListener, WindowStateListener
 {

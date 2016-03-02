@@ -1,4 +1,4 @@
-package chase;
+package util;
 
 public class Utils {
 
