@@ -5,9 +5,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.NetworkInterface;
 import java.net.URL;
-import java.util.Enumeration;
 
 import javax.swing.JEditorPane;
 import javax.swing.JOptionPane;
@@ -51,7 +49,7 @@ public class UpdateManager {
     }
 
     public static String getToolName() {
-        return "ChAsE (v 1.0.12)";
+        return "ChAsE (v 1.1.0)";
     }
 
     public static void checkForUpdates()
