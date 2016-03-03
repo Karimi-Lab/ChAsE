@@ -21,6 +21,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Dimension;
+import java.awt.FileDialog;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilenameFilter;
@@ -380,28 +381,13 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
      */
     void addExperiment()
     {
-		/*JFileChooser fc = new JFileChooser();
-		if (!m_LastAddedExperiment.equals("")) {
-			fc.setCurrentDirectory(new java.io.File(m_LastAddedExperiment).getParentFile());
-		}
-		
-	    fc.setDialogTitle("Open Epigenetic Mark(s)");
-		fc.setFileFilter(new FileNameExtensionFilter("Wig/BigWig (.wig|.wig.gz|.wig.zip|.bigwig|.bw)", "wig","gz","zip","bigwig","bw"));
-		fc.setMultiSelectionEnabled(true);
-        if( fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION )
-        {
-            File[] files = fc.getSelectedFiles();
-            for (int i = 0; i < files.length; i++)
-        */
-		
-		
-	    final String[] extensions = {"wig","gz","zip","bigwig","bw"};
+        final String[] extensions = {"wig","gz","zip","bigwig","bw"};
         FilenameFilter filter = FileDialogUtils.createIgnoreDirectoriesFilenameFilter(extensions);
         File initialDirectory = null;
         if (!m_LastAddedExperiment.equals("")) {
             initialDirectory = new java.io.File(m_LastAddedExperiment).getParentFile();
         }
-        File[] files = FileDialogUtils.chooseMultiple("Open input file", initialDirectory, filter);
+        File[] files = FileDialogUtils.chooseMultiple("Open Wig File(s)", initialDirectory, filter);
         if(files != null) {
             for (int i = 0; i < files.length; i++)
 			{
@@ -483,18 +469,19 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
      */
     void selectRegionFile()
     {
-		JFileChooser fc = new JFileChooser();
-		if (!m_TextRegion.getText().equals("")) {
-			fc.setCurrentDirectory(new java.io.File(m_TextRegion.getText()).getParentFile());
-		}
-		
-	    fc.setDialogTitle("Open Input Region");
-		fc.setFileFilter(new FileNameExtensionFilter("Region File (.gff|.bed)", "gff", "bed"));
-		if( fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION )
-		{
+        final String[] extensions = {"gff", "bed"};
+        File initialFile = null;
+        File initialDirectory = null;
+        if (!m_TextRegion.getText().equals("")) {
+            initialFile = new java.io.File(m_TextRegion.getText());
+            initialDirectory = initialFile.getParentFile();
+        }
+        File selectedFile = FileDialogUtils.chooseFile("Open Input Region", initialDirectory, initialFile, extensions, FileDialog.LOAD);
+        if(selectedFile != null) 
+        {
 			try
 			{
-				String path = fc.getSelectedFile().getCanonicalPath();
+				String path = selectedFile.getCanonicalPath();
 				m_ProgressDialog.setIndeterminate(true);
 				if (m_ProgressDialog.runTask(m_DataModel.getWorkerReadRegions(path)))
 				{
@@ -519,19 +506,18 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
      */
     void setWorkingDir()
     {
-		JFileChooser fc = new JFileChooser(); 
-		if (!m_TextWorkingDir.getText().equals("")) {
-			fc.setCurrentDirectory(new java.io.File(m_TextWorkingDir.getText()).getParentFile());
-		}
-	    fc.setDialogTitle("Set Working Directory");
-	    fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		if( fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION )
+        File initialDir = null;
+        if (!m_TextWorkingDir.getText().equals("")) {
+            initialDir = new java.io.File(m_TextWorkingDir.getText()).getParentFile();
+        }
+        File selectedFile = FileDialogUtils.chooseDirectory("Set Working Directory", initialDir);
+		if (selectedFile != null)
 		{
 			try {
-				if (!m_TextWorkingDir.getText().equals(fc.getSelectedFile().getCanonicalPath()))
+				if (!m_TextWorkingDir.getText().equals(selectedFile.getCanonicalPath()))
 				{
 					m_bDirty = true;
-					m_TextWorkingDir.setText(fc.getSelectedFile().getCanonicalPath());
+					m_TextWorkingDir.setText(selectedFile.getCanonicalPath());
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -546,18 +532,16 @@ public class InputDialog extends JPanel implements ActionListener, ChangeListene
      */
     public boolean openDirectory()
     {
-		JFileChooser fc = new JFileChooser(); 
-		if (!m_TextWorkingDir.getText().equals("")) {
-			fc.setCurrentDirectory(new java.io.File(m_TextWorkingDir.getText()).getParentFile());
-		}
-	    fc.setDialogTitle("Open Working Directory");
-	    fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		try {
-			if( fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION )
-			{
-				if (m_ProgressDialog.runTask(m_DataModel.getWorkerLoadData(fc.getSelectedFile())))
+        File initialDir = null;
+        if (!m_TextWorkingDir.getText().equals("")) {
+            initialDir = new java.io.File(m_TextWorkingDir.getText()).getParentFile();
+        }
+        File selectedFile = FileDialogUtils.chooseDirectory("Open Working Directory", initialDir);
+        try {
+            if (selectedFile != null) {
+				if (m_ProgressDialog.runTask(m_DataModel.getWorkerLoadData(selectedFile)))
 				{
-					m_TextWorkingDir.setText(fc.getSelectedFile().getCanonicalPath());
+					m_TextWorkingDir.setText(selectedFile.getCanonicalPath());
 					
 					m_TextRegion.setText(m_DataModel.getParam().getRegionsFileName());
 					
