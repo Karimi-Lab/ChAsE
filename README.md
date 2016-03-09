@@ -17,7 +17,7 @@ Features include:
 ### Installation
 This software requires Java 7 or greater. It is recommended that you get the latest version of [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-* Download and extract the [latest binary distribution] (https://github.com/hyounesy/ChAsE/blob/master/dist/ChAsE_1.1.0.zip) if you don't want to build it yourself:
+* Download and extract the [latest binary distribution] (https://github.com/hyounesy/ChAsE/raw/master/dist/ChAsE_1.1.0.zip) if you don't want to build it yourself:
 
   * **Windows**: Double click ```Run_Windows.bat```.
   * **Mac**: Right click ```Run_OSX.command``` and select Open. Confirm running the application.
@@ -25,8 +25,8 @@ This software requires Java 7 or greater. It is recommended that you get the lat
   * Or, you may open a console and run the following in the command-line: ``` java -jar chase.jar ```
   
 ### Example Data
-* [Example Workspace](https://github.com/hyounesy/ChAsE/blob/master/dist/ExampleWorkspace.zip): Contains two preprocessed exmaple workspaces which can be readily opened using the [Open Existing Analysis] Option 
-* [Example Data](https://github.com/hyounesy/ChAsE/blob/master/dist/ExampleData.zip): Contains an example GFF file (mm9) and four WIG files which can be used to create a new workspace from scratch.
+* [Example Workspace](https://github.com/hyounesy/ChAsE/raw/master/dist/ExampleWorkspace.zip): Contains two preprocessed exmaple workspaces which can be readily opened using the [Open Existing Analysis] Option 
+* [Example Data](https://github.com/hyounesy/ChAsE/raw/master/dist/ExampleData.zip): Contains an example GFF file (mm9) and four WIG files which can be used to create a new workspace from scratch.
 
 ## Video Walkthroughs
 | | ![Input Data](doc/Full.png) [Full Video Walkthrough](https://vimeo.com/69030501)| |
