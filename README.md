@@ -1,6 +1,6 @@
 <img align="left" src="doc/ChaseLogo.jpg" alt="ChAsE logo"> </img>
 
-# ChAsE: Chromatin Analysis and Exploration
+# ChAsE: Chromatin Analysis and Exploration Tool
 
 ChAsE is a cross platform desktop application that provides an interactive graphical interface for analysis of epigenomic data. 
 
