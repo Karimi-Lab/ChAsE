@@ -33,7 +33,7 @@ This software requires Java 7 or greater. It is recommended that you get the lat
 :--------:|:--------:|:--------:
 ![Input Data](doc/Input.png) Input: [New Datasets](https://vimeo.com/157531803) | ![Open Workspace](doc/OpenWorkspace.png) Input: [Open Workspace](https://vimeo.com/157531804)| ![Heatmap Filter](doc/ModifyParameters.png) Input: [Modify Parameters](https://vimeo.com/157531802)
 ![Heatmap Sorting](doc/HeatmapSort.png) Heatmap: [Sorting](https://vimeo.com/157376716)| ![Heatmap Navigation](doc/HeatmapNavigation.png) Heatmap: [Navigation](https://vimeo.com/157531800) | ![Heatmap Filter](doc/HeatmapFilter.png) Heatmap: [Filtering](https://vimeo.com/157531801)
-![Kmeans](doc/kmeans.png) Method: [K-means](https://vimeo.com/157376752)| ![Cluster Comparison](doc/ClusterComparison.png) Method: [Cluster Comparison](https://vimeo.com/157531799)| ![Heatmap Filter](doc/SignalQuery.png) Method: [Signal Query](https://vimeo.com/158296729)
+![Kmeans](doc/Kmeans.png) Method: [K-means](https://vimeo.com/157376752)| ![Cluster Comparison](doc/ClusterComparison.png) Method: [Cluster Comparison](https://vimeo.com/157531799)| ![Heatmap Filter](doc/SignalQuery.png) Method: [Signal Query](https://vimeo.com/158296729)
 
 ## Credits
 ChAsE is developed by [Hamid Younesy](https://www.researchgate.net/profile/Hamid_Younesy) under the supervision of [Torsten Möller](https://cs.univie.ac.at/vda-team/infpers/Torsten_M%C3%B6ller/), and in close collaboration with [Cydney Nielsen](http://www.cydney.org/).
