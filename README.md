@@ -23,7 +23,12 @@ This software requires Java 7 or greater. It is recommended that you get the lat
   * **Mac**: Right click ```Run_OSX.command``` and select Open. Confirm running the application.
   * **Linux**: Double click ```Run_Unix.sh```.
   * Or, you may open a console and run the following in the command-line: ``` java -jar chase.jar ```
-  
+
+### Example Data
+ * [Example Data (full)](http://bigwigs.brc.ubc.ca/bigwig/chase/): Contains a GFF file for Refseq genes (mm9) and several WIG and BIGWIG files (ChIP-seq, RNA-seq and Bis-seq) which can be used to create a new workspace from scratch.
+ * [Example Data (small)](https://github.com/hyounesy/ChAsE/raw/master/dist/ExampleData.zip): Contains an example GFF file (mm9) and four small WIG files (ChIP-seq and RNA-seq) which can be used to create a new workspace from scratch.
+ * [Example Workspace](https://github.com/hyounesy/ChAsE/raw/master/dist/ExampleWorkspace.zip): Contains the two pre-processed exmaple workspaces for the small and the full example data above, which can be readily opened using the [Open Existing Analysis] option.
+
 ## Documentation
 Further Documentation, example data and video walkthroughs are available in the official website: [chase.cs.univie.ac.at](http://chase.cs.univie.ac.at/)
 
