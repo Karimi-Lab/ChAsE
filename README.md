@@ -12,7 +12,7 @@ Features include:
 * Ability to compare different clusterings via set operations.
 * Exporting results for downstream analysis or as high quality images for publications.
 
-Please check the [official website](chase.cs.univie.ac.at) for updated documentation and video tutorials.
+Please check the [official website](http://chase.cs.univie.ac.at) for updated documentation and video tutorials.
 
 ## Quick Start
 
