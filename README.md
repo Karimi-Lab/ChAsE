@@ -1,4 +1,4 @@
-<img align="left" src="doc/ChaseLogo.jpg" alt="ChAsE logo"> </img>
+<img align="left" src="doc/ChaseLogo.jpg" alt="ChAsE logo" height="90"> </img>
 
 # ChAsE: Chromatin Analysis and Exploration Tool
 
@@ -11,6 +11,8 @@ Features include:
 * Set construction based on presence/absence of signal.
 * Ability to compare different clusterings via set operations.
 * Exporting results for downstream analysis or as high quality images for publications.
+
+Please check the [official website](chase.cs.univie.ac.at) for updated documentation and video tutorials.
 
 ## Quick Start
 
