@@ -41,7 +41,7 @@ public class UpdateManager {
     }
     
     public static int getBuildNumber() {
-        return 121110;
+        return 1337010101;
     }
 
     public static String getIDStr() {
@@ -49,7 +49,7 @@ public class UpdateManager {
     }
 
     public static String getToolName() {
-        return "ChAsE (v 1.1.0)";
+        return "ChAsE (v 1.1.2)";
     }
 
     public static void checkForUpdates()
@@ -157,7 +157,7 @@ public class UpdateManager {
 
     private static String sendPost(String message) throws Exception 
     {
-        String url = "http://genecalc.t15.org/chase_update.php";
+        String url = "http://visr.000webhostapp.com/update_chase.php";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
  

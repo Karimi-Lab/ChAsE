@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.event.ChangeEvent;
 
@@ -88,9 +89,15 @@ public class ControlPanelKmeans extends ControlPanel
 		Button buttonCluster = theControlP5.addButton("RUN_KMEANS", 1.0f, buttonX, buttonY, buttonW, buttonH);
 		buttonCluster.setCaptionLabel("Run");
 		addToLayout(buttonCluster, PanelController.ANCHOR_LEFT | PanelController.ANCHOR_TOP);
+        buttonCluster.addListener(this);
 
 		addToLayout(m_TextK, PanelController.ANCHOR_LEFT | PanelController.ANCHOR_TOP);
-		buttonCluster.addListener(this);
+		
+        buttonX += buttonW + 5;
+		Button buttonSeed = theControlP5.addButton("KMEANS_SEED", 1.0f, buttonX, buttonY, buttonH, buttonH);
+		buttonSeed.setCaptionLabel("s");
+        addToLayout(buttonSeed, PanelController.ANCHOR_LEFT | PanelController.ANCHOR_TOP);
+        buttonSeed.addListener(this);
 	}
 	
 	@Override
@@ -221,9 +228,30 @@ public class ControlPanelKmeans extends ControlPanel
 				m_K = Math.max(1, m_K - 1);
 				m_TextK.setText(Integer.toString(m_K));
 			}
+			else if (theEvent.controller().name().equals("KMEANS_SEED")) 
+			{
+			    showRandomSeedDialog();
+			}
 		}
-		
 	}
+	
+    void showRandomSeedDialog()
+    {
+        Long currentSeed = m_Framework.getKmeansSeed();
+        String strRandomSeed = (String) JOptionPane.showInputDialog(
+                ControlP5.papplet.frame, "Seed for random generator (0 to randomize):\n", "Set seed for kmeans random generator", JOptionPane.PLAIN_MESSAGE, null, null,
+                currentSeed.toString());
+
+        if (strRandomSeed != null) {
+            try {
+                m_Framework.setKmeansSeed(Long.decode(strRandomSeed));
+            }
+            catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog( ControlP5.papplet.frame, ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+    }
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
