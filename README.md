@@ -19,7 +19,7 @@ Please check the [official website](http://chase.cs.univie.ac.at) for updated do
 ### Installation
 This software requires Java 7 or greater. It is recommended that you get the latest version of [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-* Download and extract the [latest binary distribution] (https://github.com/hyounesy/ChAsE/raw/master/dist/ChAsE_1.1.2.zip) if you don't want to build it yourself:
+* Download and extract the [latest binary distribution (v 1.1.2)](https://github.com/hyounesy/ChAsE/raw/master/dist/ChAsE_1.1.2.zip) if you don't want to build it yourself:
 
   * **Windows**: Double click ```Run_Windows.bat```.
   * **Mac**: Right click ```Run_OSX.command``` and select Open. Confirm running the application.
